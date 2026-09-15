@@ -68,6 +68,15 @@ in
       withUWSM = true;
     };
 
+    # Upstream nixpkgs no longer auto-populates this when withUWSM = true
+    # (removed from nixos/modules/programs/wayland/hyprland.nix upstream);
+    # it must be set explicitly now.
+    programs.uwsm.waylandCompositors.hyprland = {
+      prettyName = "Hyprland";
+      comment = "Hyprland compositor managed by UWSM";
+      binPath = "/run/current-system/sw/bin/Hyprland";
+    };
+
     programs.nix-ld.enable = true;
 
     hardware.bluetooth = {

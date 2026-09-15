@@ -9,8 +9,12 @@ stdenv.mkDerivation {
   version = "1.0.0";
 
   src = pkgs.fetchurl {
-    url = "https://github.com/HyDE-Project/HyDE/raw/refs/heads/master/Source/arcs/Cursor_BibataIce.tar.gz";
-    sha256 = "sha256-pYvIxOZ3jvcLrv4bDYPc0FPkPLydyWwltFLCZ7aILaQ=";
+    # Previously fetched from HyDE-Project/HyDE's `master` branch, a moving
+    # target; that file was removed upstream, breaking the build. Source
+    # directly from the upstream cursor project instead, pinned to a release
+    # tag for reproducibility.
+    url = "https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata-Modern-Ice.tar.xz";
+    sha256 = "sha256-poyuYMTccGNQ4ZTryRxf5IvHvJ1Z4RlVWDSip+5QeO8=";
   };
 
   nativeBuildInputs = with pkgs; [
