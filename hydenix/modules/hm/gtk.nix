@@ -25,7 +25,9 @@ in
       gsettings-desktop-schemas
       gnome-settings-daemon
       gnome-tweaks
-      gnomeExtensions.window-gestures
+      # gnomeExtensions.window-gestures was dropped: nixpkgs now only packages
+      # GNOME 49-51 extensions and window-gestures supports up to GNOME 48.
+      # It is a GNOME Shell extension; this desktop runs Hyprland.
       nwg-look
       adwaita-icon-theme
       emote
